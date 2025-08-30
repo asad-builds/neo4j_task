@@ -43,8 +43,23 @@ MATCH (n) RETURN n LIMIT 50
 ```cypher
 MATCH (a:Author)-[:AUTHORED]->(w:Work) RETURN a, w LIMIT 20
 ```
+**Displays who authored which research papers (Zoomed in)**
+
+![Author-Work Network](visualizations/author_work.png)
 
 ### 3. Author Affiliation
 ```cypher
 MATCH p=()-[:AFFILIATED_WITH]->() RETURN p LIMIT 25;
 ```
+**Shows affiliations of authors**
+
+![Affiliation Network](visualizations/affiliations.png)
+
+### 4. Research Collaboration Network
+```cypher
+MATCH (a1:Author)-[:AUTHORED]->(w:Work)<-[:AUTHORED]-(a2:Author)
+RETURN a1, w, a2 LIMIT 30
+```
+**Shows collaboration between researchers**
+
+![Collaboration Network](visualizations/collaboration.png)
