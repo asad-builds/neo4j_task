@@ -35,6 +35,9 @@ python neo4j_task.py
 ```cypher
 MATCH (n) RETURN n LIMIT 50
 ```
+**Graph for all entities and their connections (Zoomed in)**
+
+![Graph Overview](visualizations/graph_overview.png)
 
 ### 2. Author-work Relationships
 ```cypher
